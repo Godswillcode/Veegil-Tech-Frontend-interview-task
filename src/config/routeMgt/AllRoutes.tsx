@@ -8,6 +8,8 @@ import { DashboardLayout } from "src/components/layout/Layout";
 import Profile from "src/features/ExtraSettings/pages/Profile";
 import Dashboard from "src/features/dashboard/pages/Dashboard";
 import Registration from "src/features/authentication/pages/Registration";
+import Account from "src/features/account/pages/Account";
+import TransactionHistory from "src/features/transactionHistory/pages/TransactionHistory";
 
 const routesArray: any[] = [
   {
@@ -17,6 +19,14 @@ const routesArray: any[] = [
   {
     path: appRoute.profile,
     element: <Profile />,
+  },
+  {
+    path: appRoute.account,
+    element: <Account />,
+  },
+  {
+    path: appRoute.transactionHistory,
+    element: <TransactionHistory />,
   },
 ];
 

@@ -8,12 +8,12 @@ export const sidebarLinks: SidebarLink[] = [
     icon: "carbon:home",
   },
   {
-    to: appRoute.customers,
+    to: appRoute.transactionHistory,
     title: "Transaction history",
     icon: "iconamoon:history-light",
   },
   {
-    to: appRoute.customers,
+    to: appRoute.account,
     title: "Account",
     icon: "uil:user",
   },

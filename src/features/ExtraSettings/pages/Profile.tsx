@@ -1,6 +1,5 @@
 import { PageIntro } from "src/components/PageIntro";
-// import { CompanyProfile } from "../components/CompanyProfile";
-import { RealtorProfile } from "../components/Profile";
+import { UserProfile } from "../components/Profile";
 
 const Profile = () => {
   return (
@@ -11,7 +10,7 @@ const Profile = () => {
         description="View & edit your profile on the system"
       />
       {/* <CompanyProfile /> */}
-      <RealtorProfile />
+      <UserProfile />
     </div>
   );
 };
