@@ -1,7 +1,6 @@
 import { Icon } from "@iconify/react";
 import { SimpleCard } from "src/components/cards/SimpleCard";
-import { appRoute } from "src/config/routeMgt/routePaths";
-
+import { LatestActivities } from "../components/LatestActivities";
 
 const Dashboard = () => {
 
@@ -22,8 +21,7 @@ const Dashboard = () => {
           count={0}
           cardColor={"blue"}
           icon={"akar-icons:money"}
-          routePath={appRoute.realtors}
-          acceptLink={true}
+        
         />
       
         <SimpleCard
@@ -31,8 +29,7 @@ const Dashboard = () => {
           count={0}
           cardColor={"oxblood"}
           icon={"ph:hand-withdraw-bold"}
-          routePath={appRoute.properties}
-          acceptLink={true}
+         
         />
        
         <SimpleCard
@@ -40,17 +37,24 @@ const Dashboard = () => {
           count={0}
           cardColor={"lightBlue"}
           icon={"mingcute:coupon-line"}
-          routePath={appRoute.commissions}
-          acceptLink={true}
+         
         />
         <SimpleCard
           title={"Avaliable Loan"}
           count={0}
           cardColor={"purple"}
           icon={"tdesign:money"}
-          routePath={appRoute.commissions}
-          acceptLink={true}
+         
         />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-7">
+      <div className="col-span-2">
+      <LatestActivities/>
+      <div>
+      </div>
+      </div>
+      
       </div>
     </>
   );

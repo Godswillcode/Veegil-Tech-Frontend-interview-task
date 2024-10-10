@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
 import { simpleCardProps } from "src/types";
 
 export const SimpleCard = ({
@@ -7,8 +6,6 @@ export const SimpleCard = ({
   count,
   cardColor,
   icon,
-  acceptLink,
-  routePath,
 }: simpleCardProps) => {
   // Define a color mapping
   const colorMap: Record<string, string> = {
@@ -17,15 +14,14 @@ export const SimpleCard = ({
     yellow: "var(--card-yellow)",
     oxblood: "var(--card-oxblood)",
     purple: "var(--card-purple)",
-    lightBlue: "var(--card-lightBlue)"
+    lightBlue: "var(--card-lightBlue)",
   };
 
   // Get the selected color from the mapping
   const selectedColor = colorMap[cardColor];
 
   return (
-    <Link
-      to={acceptLink ? routePath : "#"}
+    <div
       className={`border border-${cardColor}-600 rounded-lg py-3 px-3 relative`}
       style={{ borderColor: selectedColor }}
     >
@@ -43,6 +39,6 @@ export const SimpleCard = ({
           </h2>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
