@@ -4,7 +4,7 @@ import { loginProps } from "../types";
 import { useMutation } from "react-query";
 
 const loginUser = async (props: loginProps) => {
-  const url = `${MICROSERVICE_ENDPOINTS.AUTHENTICATION}/user/login`;
+  const url = `${MICROSERVICE_ENDPOINTS.GENERAL_SERVICE}/user/login`;
   const data = { ...props };
   const response = await axios.post(url, data);
   return response;

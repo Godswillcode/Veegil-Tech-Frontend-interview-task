@@ -44,21 +44,21 @@ const Dashboard = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-16">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-x-10 gap-y-5 mt-16">
+        <div className="col-span-3">
           <LatestActivities />
         </div>
-        <div>
+        <div className="col-span-2">
           <div>
-            <h4 className="text-sm text-accentSecondary uppercase -mb-3">
+            <h4 className="text-sm text-accentSecondary uppercase">
               Download the Mobile App
             </h4>
 
-            <div className="flex items-center justify-between">
-              <div className=" h-28 w-36 flex justify-center items-center">
+            <div className="flex items-center gap-3 justify-between">
+              <div className=" h-20 w-[10.5rem] flex justify-center items-center">
                 <img src={google} alt="google" className="cursor-pointer"/>
               </div>
-              <div className=" h-28 w-36 flex justify-center items-center">
+              <div className=" h-20 w-[10.5rem] flex justify-center items-center">
                 <img src={playStore} alt="ios" className="cursor-pointer" />
               </div>
             </div>
