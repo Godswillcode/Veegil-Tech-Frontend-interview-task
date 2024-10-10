@@ -11,6 +11,7 @@ export default {
         primary: "var(--app-color-primary)",
         secondary: "var(--app-color-secondary)",
         accent: "var(--app-color-accent)",
+        accentSecondary: "var(--app-color-accent-secondary)",
       },
     },
   },

@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { formatToNaira } from "src/features/dashboard/utils";
 import { simpleCardProps } from "src/types";
 
 export const SimpleCard = ({
@@ -35,7 +36,7 @@ export const SimpleCard = ({
         <div className="flex flex-col">
           <h3 className="font-semibold text-accent text-sm pb-12">{title}</h3>
           <h2 className="font-bold text-2xl flex-end absolute bottom-1">
-            {count}
+            {formatToNaira(count)}
           </h2>
         </div>
       </div>

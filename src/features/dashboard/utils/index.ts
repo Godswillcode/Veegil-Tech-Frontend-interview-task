@@ -1,6 +1,8 @@
-export const options = {
-    // Add any chart options here
-    responsive: true,
-    maintainAspectRatio: false,
-  };
-  
+
+
+export const formatToNaira = (amount: number): string => {
+  return new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+  }).format(amount);
+};

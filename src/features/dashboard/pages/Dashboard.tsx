@@ -1,60 +1,69 @@
-import { Icon } from "@iconify/react";
 import { SimpleCard } from "src/components/cards/SimpleCard";
 import { LatestActivities } from "../components/LatestActivities";
+import google from "../assets/google-play-badge.png";
+import playStore from "../assets/iosbadge-101-image.webp";
 
 const Dashboard = () => {
-
   return (
     <>
       <div className="banner text-white flex justify-center text-center items-center px-5 mt-3">
         <div>
           <h3 className="text-2xl md:text-4xl font-medium pb-2 flex items-center gap-3">
-            <span>Hello</span> <Icon icon="noto:waving-hand" />
+            <span>Hello Godswill</span>
           </h3>
-          <h4 className="font-medium">Welcome back Godswill</h4>
+          <h4 className="font-medium">We're glad you're here!</h4>
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mt-7">
         <SimpleCard
           title={"Current Balance"}
-          count={0}
+          count={5000}
           cardColor={"blue"}
           icon={"akar-icons:money"}
-        
         />
-      
+
         <SimpleCard
           title={"Total Withdrawal"}
-          count={0}
+          count={1000}
           cardColor={"oxblood"}
           icon={"ph:hand-withdraw-bold"}
-         
         />
-       
+
         <SimpleCard
           title={"Weekly Coupon"}
-          count={0}
+          count={20}
           cardColor={"lightBlue"}
           icon={"mingcute:coupon-line"}
-         
         />
         <SimpleCard
           title={"Avaliable Loan"}
-          count={0}
+          count={2000}
           cardColor={"purple"}
           icon={"tdesign:money"}
-         
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-7">
-      <div className="col-span-2">
-      <LatestActivities/>
-      <div>
-      </div>
-      </div>
-      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-16">
+        <div className="col-span-2">
+          <LatestActivities />
+        </div>
+        <div>
+          <div>
+            <h4 className="text-sm text-accentSecondary uppercase -mb-3">
+              Download the Mobile App
+            </h4>
+
+            <div className="flex items-center justify-between">
+              <div className=" h-28 w-36 flex justify-center items-center">
+                <img src={google} alt="google" className="cursor-pointer"/>
+              </div>
+              <div className=" h-28 w-36 flex justify-center items-center">
+                <img src={playStore} alt="ios" className="cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
