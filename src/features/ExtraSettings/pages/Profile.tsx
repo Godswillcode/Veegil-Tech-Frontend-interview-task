@@ -9,7 +9,6 @@ const Profile = () => {
         arrowBack={false}
         description="View & edit your profile on the system"
       />
-      {/* <CompanyProfile /> */}
       <UserProfile />
     </div>
   );

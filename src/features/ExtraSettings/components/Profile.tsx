@@ -1,4 +1,4 @@
-import realImage from "src/assets/images/realtorsImage.png";
+import realImage from "src/assets/images/UserImage.png";
 
 export const UserProfile = () => {
   return (
