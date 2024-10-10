@@ -1,6 +1,6 @@
 import { PageIntro } from "src/components/PageIntro";
 // import { CompanyProfile } from "../components/CompanyProfile";
-import { RealtorProfile } from "../components/RealtorProfile";
+import { RealtorProfile } from "../components/Profile";
 
 const Profile = () => {
   return (

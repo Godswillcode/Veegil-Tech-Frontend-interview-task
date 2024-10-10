@@ -1,6 +1,6 @@
 import realImage from "src/assets/images/realtorsImage.png";
 
-export const RealtorProfile = () => {
+export const Profile = () => {
   return (
     <>
       <div className="banner text-white flex justify-center text-center items-center px-5 mt-3">

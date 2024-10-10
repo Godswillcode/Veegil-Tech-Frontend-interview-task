@@ -1,5 +1,4 @@
 import { Tooltip } from "antd";
-import logo from "src/assets/images/logo.png";
 import { Icon } from "@iconify/react";
 import "./style.css";
 import { sidebarLinks } from ".";

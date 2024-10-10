@@ -2,7 +2,6 @@ import { SearchOutlined } from "@ant-design/icons";
 import { Drawer, Input } from "antd";
 import { Icon } from "@iconify/react";
 import { Dropdown } from "antd";
-// import logo from "src/assets/miniLogo.png";
 import { useState } from "react";
 import { SideBar } from "./SideBar";
 import avatar from "src/assets/images/user.png";
