@@ -15,7 +15,7 @@ const TransactionHistory = () => {
       />
 
       <Table
-        className="bg-white mt-10"
+        className="shadow-sm mt-10"
         columns={columns}
         dataSource={[]}
         // pagination={{ ...pagination, total: data?.total }}

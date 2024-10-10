@@ -1,6 +1,16 @@
 import realImage from "src/assets/images/UserImage.png";
+import { openNotification } from "src/utils/notification";
 
 export const UserProfile = () => {
+  const handleEdit = () => {
+    openNotification({
+      title: "Info",
+      state: "info",
+      description:
+        "Please note that this action is not connected to any endpoint.",
+      duration: 8.0,
+    });
+  };
   return (
     <>
       <div className="banner text-white flex justify-center text-center items-center px-5 mt-3">
@@ -28,7 +38,7 @@ export const UserProfile = () => {
             <span>090354261781</span>
           </div>
 
-          <button className="transparentButton">Edit Profile</button>
+          <button className="transparentButton" onClick={handleEdit}>Edit Profile</button>
         </div>
       </div>
     </>
