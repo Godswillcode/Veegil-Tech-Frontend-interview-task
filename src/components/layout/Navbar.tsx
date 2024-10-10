@@ -9,11 +9,13 @@ import { SignOut } from "./SignOut";
 import { Link } from "react-router-dom";
 import { appRoute } from "src/config/routeMgt/routePaths";
 import { ChangePassword } from "src/ExtraSettings/components/ChangePassword";
+import { SearchModal } from "../appSearch/SearchModal";
 
 export const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
   const [openLogout, setOpenLogout] = useState(false);
   const [passwordChange, setPasswordChange] = useState(false);
+  const [openSearchModal, setOpenSearchModal] = useState(false);
 
   return (
     <>
@@ -21,6 +23,11 @@ export const Navbar = () => {
         open={passwordChange}
         handleClose={() => setPasswordChange(false)}
       />
+      <SearchModal
+        open={openSearchModal}
+        handleClose={() => setOpenSearchModal(false)}
+      />
+
       <div className="w-full bg-white sticky top-0 z-50 shadow-sm border-b py-3 Container flex justify-between items-center">
         <div className="flex items-center gap-x-2">
           <Icon
@@ -28,15 +35,20 @@ export const Navbar = () => {
             className="text-xl lg:hidden flex"
             onClick={() => setOpenSideBar(true)}
           />
-         
+
           <Input
+            onClick={() => setOpenSearchModal(true)}
             placeholder="Search here..."
             suffix={<SearchOutlined style={{ color: "rgba(0,0,0,.45)" }} />}
             className="md:w-80 lg:flex hidden"
           />
         </div>
         <div className="flex items-center gap-x-5 text-gray-600">
-          <Icon icon="tabler:search" className="lg:hidden flex text-xl" />
+          <Icon
+            onClick={() => setOpenSearchModal(true)}
+            icon="tabler:search"
+            className="lg:hidden flex text-xl"
+          />
 
           <Dropdown
             overlay={
@@ -85,7 +97,7 @@ export const Navbar = () => {
 
       {/* sidebar mobile */}
       <Drawer
-        title="Sidebar"
+        title="Menu"
         open={openSideBar}
         onClose={() => setOpenSideBar(false)}
       >
