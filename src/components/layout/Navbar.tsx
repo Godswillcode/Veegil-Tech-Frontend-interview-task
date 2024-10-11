@@ -52,7 +52,7 @@ export const Navbar = () => {
 
           <Dropdown
             overlay={
-              <div className="bg-white border overflow-y px-3 rounded py-5 mr-3 mt-2 shadow-sm w-[13rem] h-[16.2rem]">
+              <div className="bg-white border overflow-y px-3 rounded py-5 mr-3 mt-2 shadow-sm w-[13rem] h-[14rem]">
                 <div className="text-center">
                   <div className="border-b pb-4">
                     <p className="pt-4 font-semibold text-lg">

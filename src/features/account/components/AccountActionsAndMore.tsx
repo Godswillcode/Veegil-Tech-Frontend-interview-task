@@ -13,7 +13,7 @@ export const AccountActionsAndMore = () => {
     <div className="flex flex-col gap-4">
       <div className="border cursor-pointer group flex items-center text-accentSecondary gap-1 shadow-sm rounded-md px-4 py-4">
         <Icon icon="tdesign:add" className="text-3xl" />
-        <span className="text-sm group-hover:text-secondary">Fund Account</span>
+        <span className="text-sm group-hover:text-secondary">Deposit Fund</span>
       </div>
       <div className="border cursor-pointer group flex items-center text-accentSecondary gap-1 shadow-sm rounded-md px-4 py-4">
         <Icon icon="f7:money-dollar" className="text-3xl" />
