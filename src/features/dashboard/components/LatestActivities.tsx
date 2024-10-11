@@ -24,7 +24,9 @@ export const LatestActivities = () => {
               <Icon icon="tabler:wallet" className="text-lg text-white" />
             </div>
             <div>
-              <p className="pb-1">Account credited</p>
+              <p className="pb-1">Account credited 
+               {/* Withdrawal made */}
+              </p>
               <p>1 min ago</p>
             </div>
           </div>

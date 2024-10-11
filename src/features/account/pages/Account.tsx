@@ -11,7 +11,7 @@ const Account = () => {
         description="Godswill Omenuko"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-x-10 gap-y-5 mt-16">
         <div className="col-span-2">
          <AccountActionsAndMore/>
         </div>

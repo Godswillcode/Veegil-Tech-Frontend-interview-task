@@ -4,7 +4,6 @@ import { Icon } from "@iconify/react";
 import { Dropdown } from "antd";
 import { useState } from "react";
 import { SideBar } from "./SideBar";
-import avatar from "src/assets/images/user.png";
 import { SignOut } from "./SignOut";
 import { Link } from "react-router-dom";
 import { appRoute } from "src/config/routeMgt/routePaths";
@@ -56,10 +55,9 @@ export const Navbar = () => {
               <div className="bg-white border overflow-y px-3 rounded py-5 mr-3 mt-2 shadow-sm w-[13rem] h-[16.2rem]">
                 <div className="text-center">
                   <div className="border-b pb-4">
-                    <div className="flex justify-center">
-                      <img src={avatar} alt="avatar" className="h-10" />
-                    </div>
-                    <p className="pt-4">Godswill Omenuko</p>
+                    <p className="pt-4 font-semibold text-lg">
+                      Godswill Omenuko
+                    </p>
                   </div>
                 </div>
 
@@ -88,15 +86,17 @@ export const Navbar = () => {
             placement="bottom"
             trigger={["click"]}
           >
-            <div className="flex items-center gap-2 hover:border-b border-gray-700 cursor-pointer hover:text-primary">
-            <div className="h-7 w-7 rounded-full border border-primary  shadow-sm">
-          <img
-            src={realImage}
-            alt="profile"
-            className="rounded-full object-cover h-full w-full"
-          />
-        </div>
-              <span className="text-base md:flex hidden">Profile</span>
+            <div className="flex items-center gap-2 group cursor-pointer hover:text-primary">
+              <div className="h-7 w-7 rounded-full border border-primary  shadow-sm">
+                <img
+                  src={realImage}
+                  alt="profile"
+                  className="rounded-full object-cover h-full w-full"
+                />
+              </div>
+              <span className="text-base md:flex group-hover:text-secondary  hidden">
+                Profile
+              </span>
             </div>
           </Dropdown>
         </div>
