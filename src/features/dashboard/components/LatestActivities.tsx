@@ -15,7 +15,7 @@ export const LatestActivities = () => {
       {[1, 2, 3, 4].map((item) => (
         <div
           key={item}
-          className="border flex shadow-sm items-start mb-4 justify-between rounded-md px-4 py-5 text-xs text-accentSecondary"
+          className="border flex shadow-sm rounded-md px-4 py-5 items-start mb-4 justify-between text-xs text-accentSecondary"
         >
           <div className="flex items-center gap-3">
             <div

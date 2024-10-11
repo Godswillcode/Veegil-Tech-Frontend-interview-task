@@ -55,11 +55,11 @@ const Dashboard = () => {
             </h4>
 
             <div className="flex items-center gap-3 justify-between">
-              <div className=" h-20 w-[10.5rem] flex justify-center items-center">
-                <img src={google} alt="google" className="cursor-pointer"/>
+              <div className="h-20 w-[10rem] flex justify-center items-center">
+                <img src={google} alt="google" className="cursor-pointer w-full"/>
               </div>
-              <div className=" h-20 w-[10.5rem] flex justify-center items-center">
-                <img src={playStore} alt="ios" className="cursor-pointer" />
+              <div className="h-20 w-[10rem] flex justify-center items-center">
+                <img src={playStore} alt="ios" className="cursor-pointer w-full" />
               </div>
             </div>
           </div>

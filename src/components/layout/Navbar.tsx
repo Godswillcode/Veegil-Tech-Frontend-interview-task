@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { appRoute } from "src/config/routeMgt/routePaths";
 import { ChangePassword } from "src/ExtraSettings/components/ChangePassword";
 import { SearchModal } from "../appSearch/SearchModal";
+import realImage from "src/assets/images/UserImage.png";
 
 export const Navbar = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -88,7 +89,13 @@ export const Navbar = () => {
             trigger={["click"]}
           >
             <div className="flex items-center gap-2 hover:border-b border-gray-700 cursor-pointer hover:text-primary">
-              <Icon icon="mingcute:user-4-fill" className="text-xl" />
+            <div className="h-7 w-7 rounded-full border border-primary  shadow-sm">
+          <img
+            src={realImage}
+            alt="profile"
+            className="rounded-full object-cover h-full w-full"
+          />
+        </div>
               <span className="text-base md:flex hidden">Profile</span>
             </div>
           </Dropdown>
