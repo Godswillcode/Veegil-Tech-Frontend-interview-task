@@ -4,7 +4,7 @@ import Login from "src/features/authentication/pages/Login";
 import ForgotPassword from "src/features/authentication/pages/ForgotPassword";
 import ResetPassword from "src/features/authentication/pages/ResetPassword";
 import { DashboardLayout } from "src/components/layout/Layout";
-// import { RequireAuth } from "react-auth-kit";
+import { RequireAuth } from "react-auth-kit";
 import Profile from "src/features/ExtraSettings/pages/Profile";
 import Dashboard from "src/features/dashboard/pages/Dashboard";
 import Registration from "src/features/authentication/pages/Registration";
@@ -40,13 +40,13 @@ export const AllRoutes = () => {
               key={index}
               path={route.path}
               element={
-                route.path === appRoute.login_in ? route.element : route.element
-
-                // (
-                //   <RequireAuth loginPath={appRoute.login_in}>
-                //     {route.element}
-                //   </RequireAuth>
-                // )
+                route.path === appRoute.login_in ? (
+                  route.element
+                ) : (
+                  <RequireAuth loginPath={appRoute.login_in}>
+                    {route.element}
+                  </RequireAuth>
+                )
               }
             />
           ))}

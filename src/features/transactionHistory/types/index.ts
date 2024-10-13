@@ -1,9 +1,11 @@
 export interface ITransactionHistoryProps {
   date: string;
   time: string;
-  type: string;
+  transaction_type: string;
   amount: number;
-  accountName: string;
-  accountNumber: number;
-  bank: string;
+  account_name: string;
+  account_number: number;
+   reason: string;
+   notes: string
+   createdAt: string;
 }

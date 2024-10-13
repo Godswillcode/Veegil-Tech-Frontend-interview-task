@@ -44,12 +44,6 @@ export interface IUserToken {
   token: string;
 }
 
-export interface IGeneralProps {
-  id: number;
-  EndPointUrl?: string;
-  is_active?: boolean;
-}
-
 export interface paginationAndFilterProps {
   pagination?: {
     pageSize?: number;
@@ -63,7 +57,5 @@ export interface searchValueProps {
   searchValue: string;
 }
 
-export interface formViewerProps {
-  label: string;
-  value: string;
-}
+
+export type INavBarActions = "sideBar" | "logout" | "passwordChange" | "searchModal"

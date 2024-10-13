@@ -1,13 +1,15 @@
 import realImage from "src/assets/images/UserImage.png";
+import { useGetUserInfo } from "src/hooks/useGetUserInfo";
 import { openNotification } from "src/utils/notification";
 
 export const UserProfile = () => {
+  const {userInfo} = useGetUserInfo()
   const handleEdit = () => {
     openNotification({
       title: "Info",
       state: "info",
       description:
-        "Please note that this action is not connected to any endpoint.",
+        "Coming soon...",
       duration: 8.0,
     });
   };
@@ -32,10 +34,10 @@ export const UserProfile = () => {
 
       <div className="flex justify-center mt-4 text-center">
         <div>
-          <h4 className="font-semibold pb-2">Godswill Omenuko</h4>
+          <h4 className="font-semibold pb-2">{userInfo?.full_name}</h4>
           <div className="flex items-center gap-3 text-sm mb-5">
-            <span>amgodswill1@gmail.com</span> <span>-</span>
-            <span>090354261781</span>
+            <span>{userInfo?.email}</span> <span>-</span>
+            <span>0{userInfo?.phone}</span>
           </div>
 
           <button className="transparentButton" onClick={handleEdit}>Edit Profile</button>

@@ -2,9 +2,11 @@ import { Tooltip } from "antd";
 import { useRef } from "react";
 import realImage from "src/assets/images/UserImage.png";
 import { formatToNaira } from "src/features/dashboard/utils";
+import { useGetUserInfo } from "src/hooks/useGetUserInfo";
 import { openNotification } from "src/utils/notification";
 
 export const AccountDetails = () => {
+  const {userInfo} = useGetUserInfo()
   const textAreaRef = useRef<any>(null);
 
   function copyToClipboard(e: any) {
@@ -32,14 +34,14 @@ export const AccountDetails = () => {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-center pt-3">Godswill Omenuko</h2>
+      <h2 className="text-2xl font-bold text-center pt-3">{userInfo?.full_name}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mt-5">
         <div className="border flex justify-between shadow-sm rounded-md px-4 py-5">
           <div>
             <input
               type="text"
               ref={textAreaRef}
-              value={`7358496050`}
+              value={userInfo?.phone}
               className="font-medium text-[22px] w-32 border-none inline outline-none"
             />
             <p className="text-accentSecondary text-sm pt-1">

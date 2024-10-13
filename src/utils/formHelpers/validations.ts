@@ -50,20 +50,7 @@ export const passwordValidationRules: Rule[] = [
   },
 ];
 
-const phoneNumberVal: Rule = {
-  validator: async (_, value) => {
-    let paswd = /^\+?[0-9()-\s]+$/;
 
-    if (!value.match(paswd)) throw new Error("Only digits are allowed");
-    // if (false) throw new Error("Something wrong!");
-    return true;
-  },
-};
-
-export const phoneNumberValidationRules: Rule[] = [
-  ...generalValidationRules,
-  phoneNumberVal,
-];
 
 export const integerValidationRules: Rule[] = [
   { required: true, message: "Please enter a number" },
@@ -85,4 +72,23 @@ export const urlValidationRules: Rule[] = [
     message: "Invalid URL",
   },
   { whitespace: true },
+];
+
+
+export const phoneNumberValidationRules: Rule[] = [
+  ...generalValidationRules,
+  {
+    validator: async (_, value) => {
+      // Check if the input is exactly 11 digits long and contains only digits
+      const phoneRegex = /^[0-9]{11}$/;
+
+      if (!value) {
+        throw new Error("Phone number is required.");
+      }
+      if (!phoneRegex.test(value)) {
+        throw new Error("Phone number must be exactly 11 digits and cannot contain any other characters.");
+      }
+      return true;
+    },
+  },
 ];

@@ -6,16 +6,15 @@ import { useSignOut } from "react-auth-kit";
 
 export const SignOut = ({ handleClose, open }: IdentifierProps) => {
     const signOut = useSignOut();
-
   return (
     <Modal open={open} onCancel={() => handleClose()} footer={null}>
       <div className="text-center">
         <div className="flex justify-center">
           <img src={warning} alt="warning" className="h-12" />
         </div>
-        <h3 className="text-lg font-medium text-accent pt-2">Sign out</h3>
+        <h3 className="text-lg font-medium text-accent pt-2">Log out</h3>
         <p className="text-sm text-gray-500 pt-2">
-          Are you sure you would like to sign out{" "}
+          Are you sure you would like to logout{" "}
           <br className="lg:flex hidden" /> of your account?
         </p>
         <div className="flex items-center justify-center gap-3 mt-5">

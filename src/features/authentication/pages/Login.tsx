@@ -22,12 +22,12 @@ const handleSubmit = (values: any) => {
         openNotification({
           title: "Error",
           state: "error",
-          description: err.response.data.message,
+          description: err.response.data.data.message,
           duration: 8.0,
         });
       },
       onSuccess: (res: any) => {
-        const result = res.data;
+        const result = res.data.data;
         if (
           signIn({
             token: result.token,
@@ -39,15 +39,13 @@ const handleSubmit = (values: any) => {
           openNotification({
             title: "Success",
             state: "success",
-            description: "Logged in successfully",
+            description: res.data.data.message,
             duration: 4.5,
           });
         }
       },
     })
 }
-
-
   return (
     <>
       {isAuthenticated() && <Navigate to={appRoute.home} replace={true} />}

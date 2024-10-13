@@ -10,22 +10,27 @@ import { appRoute } from "src/config/routeMgt/routePaths";
 import { ChangePassword } from "src/ExtraSettings/components/ChangePassword";
 import { SearchModal } from "../appSearch/SearchModal";
 import realImage from "src/assets/images/UserImage.png";
+import { INavBarActions } from "src/types";
+import { useGetUserInfo } from "src/hooks/useGetUserInfo";
 
 export const Navbar = () => {
-  const [openSideBar, setOpenSideBar] = useState(false);
-  const [openLogout, setOpenLogout] = useState(false);
-  const [passwordChange, setPasswordChange] = useState(false);
-  const [openSearchModal, setOpenSearchModal] = useState(false);
+  const {userInfo} = useGetUserInfo()
+  const [actions, setActions] = useState<INavBarActions>()
 
+  const onCancel = () => {
+    setActions(undefined)
+  }
+
+    
   return (
     <>
       <ChangePassword
-        open={passwordChange}
-        handleClose={() => setPasswordChange(false)}
+        open={actions === "passwordChange"}
+        handleClose={() => onCancel()}
       />
       <SearchModal
-        open={openSearchModal}
-        handleClose={() => setOpenSearchModal(false)}
+        open={actions === "searchModal"}
+        handleClose={() => onCancel()}
       />
 
       <div className="w-full bg-white sticky top-0 z-50 shadow-sm border-b py-3 Container flex justify-between items-center">
@@ -33,11 +38,11 @@ export const Navbar = () => {
           <Icon
             icon="lucide:menu"
             className="text-xl lg:hidden flex"
-            onClick={() => setOpenSideBar(true)}
+            onClick={() => setActions("sideBar")}
           />
 
           <Input
-            onClick={() => setOpenSearchModal(true)}
+            onClick={() => setActions("searchModal")}
             placeholder="Search here..."
             suffix={<SearchOutlined style={{ color: "rgba(0,0,0,.45)" }} />}
             className="md:w-80 lg:flex hidden"
@@ -45,7 +50,7 @@ export const Navbar = () => {
         </div>
         <div className="flex items-center gap-x-5 text-gray-600">
           <Icon
-            onClick={() => setOpenSearchModal(true)}
+            onClick={() => setActions("searchModal")}
             icon="tabler:search"
             className="lg:hidden flex text-xl"
           />
@@ -56,7 +61,7 @@ export const Navbar = () => {
                 <div className="text-center">
                   <div className="border-b pb-4">
                     <p className="pt-4 font-semibold text-lg">
-                      Godswill Omenuko
+                     {userInfo?.full_name}
                     </p>
                   </div>
                 </div>
@@ -68,12 +73,12 @@ export const Navbar = () => {
                   </Link>
                   <li
                     className="menuStyle"
-                    onClick={() => setPasswordChange(true)}
+                    onClick={() => setActions("passwordChange")}
                   >
                     <Icon icon="mdi:lock-outline" className="text-xl" />
                     <span>Change Password</span>
                   </li>
-                  <li className="menuStyle" onClick={() => setOpenLogout(true)}>
+                  <li className="menuStyle" onClick={() => setActions("logout")}>
                     <Icon
                       icon="ant-design:logout-outlined"
                       className="text-xl"
@@ -105,14 +110,14 @@ export const Navbar = () => {
       {/* sidebar mobile */}
       <Drawer
         title="Menu"
-        open={openSideBar}
-        onClose={() => setOpenSideBar(false)}
+        open={actions === "sideBar"}
+        onClose={() => onCancel()}
       >
         <SideBar isOpen={true} setIsOpen={() => console.log()} />
       </Drawer>
 
       {/* Logout confirmation */}
-      <SignOut open={openLogout} handleClose={() => setOpenLogout(false)} />
+      <SignOut open={actions === "logout"} handleClose={() => onCancel()} />
     </>
   );
 };
